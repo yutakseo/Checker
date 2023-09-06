@@ -1,12 +1,12 @@
 from TEST_DATASET import *
 from createArray import visual_array
 
-def evaluation(src, compare):
+def evaluation(answer, output):
     total_cell = 0
     true_cell = 0
-    for i in range(len(src)):
-        for j in range(len(src[0])):
-            if src[i][j] == compare[i][j]:
+    for i in range(len(answer)):
+        for j in range(len(answer[0])):
+            if answer[i][j] == output[i][j]:
                 true_cell += 1
             total_cell += 1
     
