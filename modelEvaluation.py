@@ -1,21 +1,33 @@
 from TEST_DATASET import *
 from createArray import visual_array
 
+
+
+
 def evaluation(answer, output):
-    total_cell = 0
-    true_cell = 0
+    #정답데이터의 코너 개수와 좌표
+    num_of_corner = 0
+    corner_position = []
+    #출력데이터의 코너 개수와 좌표
+    recognized_output_corner = 0
+    output_position = []
+    
+    #이중배열 반복문 실행
     for i in range(len(answer)):
         for j in range(len(answer[0])):
-            if answer[i][j] == output[i][j]:
-                true_cell += 1
-            total_cell += 1
+            if answer[i][j] != 0:
+                num_of_corner += 1
+                corner_position.append([i,j])
+                
+            if output[i][j] != 0:
+                recognized_output_corner += 1
+                output_position.append([i,j])
     
-    average = true_cell / total_cell * 100
-    print("유사도 : ",round(average,2))
-    return average
-
-'''
-print("유사도 : ",round(evaluation(test_data_mini, test_data_mini_compare),2))
-visual_array("true",test_data_mini)
-visual_array('model' ,test_data_mini_compare)
-'''
+    if num_of_corner != recognized_output_corner:
+        if num_of_corner > recognized_output_corner:
+            return recognized_output_corner/num_of_corner*100
+        elif recognized_output_corner > num_of_corner:
+            return (num_of_corner-(recognized_output_corner-num_of_corner))/num_of_corner
+    else:
+        for i in corner_position:
+            ㅇㅇㅇ
