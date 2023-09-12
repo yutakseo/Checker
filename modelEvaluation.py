@@ -39,15 +39,16 @@ def evaluation(answer, output):
                     pair = [point1, point2]
             closest_pair.append(pair)
             
-                    
+                        
         print(closest_pair)
                     
         
-
+#정답 데이터
 source = [[1,0,0],
-          [0,0,0],
-          [1,0,1]]
+          [1,0,0],
+          [0,0,1]]
 
+#출력 데이터
 compare = [[1,0,1],
            [0,0,0],   
            [0,0,1]]
