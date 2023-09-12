@@ -27,7 +27,7 @@ def evaluation(answer, output):
             return (len(corner_position)-(len(output_position)-len(corner_position)))/len(corner_position)
     #두 데이터의 개수가 같을 때
     else:
-        closest_pair = None
+        closest_pair = []
         min_distance = float('inf')  # 초기 최소 거리를 무한대로 설정
 
         for point1 in corner_position:
@@ -35,7 +35,11 @@ def evaluation(answer, output):
                 distance = calculate_distance(point1, point2)
                 if distance < min_distance:
                     min_distance = distance
-                    closest_pair = {point1, point2}
+                    closest_pair.append([point1, point2])
+                    min_distance = float("inf")
         print(closest_pair)
+                    
+        
+        
 
 evaluation(test_data_mini, test_data_mini_compare)
