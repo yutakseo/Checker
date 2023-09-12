@@ -28,18 +28,29 @@ def evaluation(answer, output):
     #두 데이터의 개수가 같을 때
     else:
         closest_pair = []
-        min_distance = float('inf')  # 초기 최소 거리를 무한대로 설정
 
         for point1 in corner_position:
+            min_distance = float('inf')  # 초기 최소 거리를 무한대로 설정
+            pair = []
             for point2 in output_position:
                 distance = calculate_distance(point1, point2)
-                if distance < min_distance:
+                if distance <= min_distance:
                     min_distance = distance
-                    closest_pair.append([point1, point2])
-                    min_distance = float("inf")
+                    pair = [point1, point2]
+            closest_pair.append(pair)
+            
+                    
         print(closest_pair)
                     
         
+
+source = [[1,0,0],
+          [0,0,0],
+          [1,0,1]]
+
+compare = [[1,0,1],
+           [0,0,0],   
+           [0,0,1]]
         
 
-evaluation(test_data_mini, test_data_mini_compare)
+evaluation(source, compare)
