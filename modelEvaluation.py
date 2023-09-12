@@ -43,15 +43,4 @@ def evaluation(answer, output):
         print(closest_pair)
                     
         
-#정답 데이터
-source = [[1,0,0],
-          [1,0,0],
-          [0,0,1]]
-
-#출력 데이터
-compare = [[1,0,1],
-           [0,0,0],   
-           [0,0,1]]
-        
-
 evaluation(source, compare)
